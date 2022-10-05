@@ -13,8 +13,9 @@ public class Central {
 				+ "");
 		
 		
-		
-		Game.rollBall(pingroup);
+		Game.resetPins(pingroup);
+		Game.takeTurn(pingroup);
+		Game.printLane(pingroup, 0);
 	}
 
 }

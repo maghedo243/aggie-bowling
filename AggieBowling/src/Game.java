@@ -1,19 +1,53 @@
+import java.util.Random;
 import java.util.Scanner;
+
 
 public class Game {
 	
+	static Random rndm = new Random();
+	
+	//Fills pin array
 	public static void resetPins(char[] pins) {
 		for(int i = 0; i < pins.length; i++) {
 			pins[i] = '●';
 		}
 	}
+
 	
-	public static void rollBall(char[] pins) {
+	public static void takeTurn(char[] pins) {
+		int line = selectLine(pins);
+		rollBall(pins,line);
+		
+	}
+	
+	
+	public static void rollBall(char[] pins,int rollingline) {
+		int count = 0;
+		if(rollingline == 1) {
+			if(rndm.nextInt(2) == 0) {
+				pins[6] = '·';
+				++count;
+				if(rndm.nextInt(50) == 42) {
+					pins[7] = '·';
+					++count;
+				}
+			}
+		}
+		if(rollingline == 2) {
+			
+		}
+		System.out.println(count);
+		
+	}
+	
+	
+	//Method to choose the line you roll the ball in
+	public static int selectLine(char[] pins) {
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("FIXME: Roll ball");
 		boolean done = false;
 		boolean done2 = true;
-		int rollnum = 0;
+		int rollnum = 1;
 		char h = ' ';
 		
 		while(!done) {
@@ -39,12 +73,12 @@ public class Game {
 		
 			switch(h) {
 				case 'U':
-					if(rollnum != 0) {	
+					if(rollnum != 1) {	
 						rollnum -= 1;
 					}
 					break;
 				case 'D':
-					if(rollnum != 6) {	
+					if(rollnum != 7) {	
 						rollnum += 1;
 					}
 					break;
@@ -54,48 +88,51 @@ public class Game {
 			}
 		}
 		
+		return rollnum;
 	}
 	
+	
+	//Prints bowling lane
 	public static void printLane(char[] pins, int lanearrow) {
 		System.out.println("    __________________________________________________________________________________________________");
 		System.out.println("   ▕                                                                                                 ▕");
-		if(lanearrow == 0) {
-			System.out.print("-->▕");
-		} else {
-			System.out.print("   ▕");
-		}
-		System.out.println("                                 ➤                                                            "+pins[6]+"  ▕");
 		if(lanearrow == 1) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                            ➤                                                         "+pins[3]+"    ▕");
+		System.out.println("                                 ➤                                                            "+pins[6]+"  ▕");
 		if(lanearrow == 2) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                             ➤                                                      "+pins[1]+"   "+pins[7]+"  ▕");
+		System.out.println("   · ·                            ➤                                                         "+pins[3]+"    ▕");
 		if(lanearrow == 3) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                              ➤                                                   "+pins[0]+"   "+pins[4]+"    ▕");
+		System.out.println("   · ·                             ➤                                                      "+pins[1]+"   "+pins[7]+"  ▕");
 		if(lanearrow == 4) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                             ➤                                                      "+pins[2]+"   "+pins[8]+"  ▕");
+		System.out.println("   · ·                              ➤                                                   "+pins[0]+"   "+pins[4]+"    ▕");
 		if(lanearrow == 5) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                            ➤                                                         "+pins[5]+"    ▕");
+		System.out.println("   · ·                             ➤                                                      "+pins[2]+"   "+pins[8]+"  ▕");
 		if(lanearrow == 6) {
+			System.out.print("-->▕");
+		} else {
+			System.out.print("   ▕");
+		}
+		System.out.println("   · ·                            ➤                                                         "+pins[5]+"    ▕");
+		if(lanearrow == 7 ) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
