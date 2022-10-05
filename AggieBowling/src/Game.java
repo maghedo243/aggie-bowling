@@ -24,6 +24,7 @@ public class Game {
 	public static void rollBall(char[] pins,int rollingline) {
 		int count = 0;
 		//Roll Calculations
+		//Line 1
 		if(rollingline == 1) {
 			if(rndm.nextInt(2) == 0) {
 				pins[6] = '·';
@@ -34,7 +35,8 @@ public class Game {
 				}
 			}
 			
-		} else if(rollingline == 2) {
+		} //Line 2
+		else if(rollingline == 2) {
 			if(rndm.nextInt(2) == 0) {
 				pins[3] = '·';
 				++count;
@@ -64,7 +66,7 @@ public class Game {
 				}
 				
 				return;	
-			}
+			} //end if
 			
 			//else case - if the top pin is misses
 			if(rndm.nextInt(2) == 0) {
@@ -74,7 +76,8 @@ public class Game {
 				}
 			}
 			
-		} else if(rollingline == 3){
+		} //Line 3
+		else if(rollingline == 3){
 			if(rndm.nextInt(2) == 0) {
 				pins[1] = '·';
 				++count;
@@ -134,7 +137,7 @@ public class Game {
 							++count;
 						}
 					}
-				}
+				} // end if
 				
 				//else else case
 				if(rndm.nextInt(4) == 2) {
