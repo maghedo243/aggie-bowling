@@ -20,9 +20,10 @@ public class Game {
 		
 	}
 	
-	
+	//Roll Ball function
 	public static void rollBall(char[] pins,int rollingline) {
 		int count = 0;
+		//Roll Calculations
 		if(rollingline == 1) {
 			if(rndm.nextInt(2) == 0) {
 				pins[6] = '·';
@@ -32,10 +33,119 @@ public class Game {
 					++count;
 				}
 			}
-		}
-		if(rollingline == 2) {
 			
-		}
+		} else if(rollingline == 2) {
+			if(rndm.nextInt(2) == 0) {
+				pins[3] = '·';
+				++count;
+				if(rndm.nextInt(50) == 42) {
+					pins[4] = '·';
+					++count;
+					if(rndm.nextInt(100) == 42) {
+						pins[8] = '·';
+						++count;
+					}
+				}
+				
+				if(rndm.nextInt(4) == 2) {
+					pins[7] = '·';
+					++count;
+					if(rndm.nextInt(100) == 42) {
+						if(pins[8] != '·') {
+							pins[8] = '·';
+							++count;
+						}
+					}
+				}
+				
+				if(rndm.nextInt(4) == 2) {
+					pins[6] = '·';
+					++count;
+				}
+				
+				return;	
+			}
+			
+			//else case - if the top pin is misses
+			if(rndm.nextInt(2) == 0) {
+				if(pins[6] != '·') {
+					pins[6] = '·';
+					++count;
+				}
+			}
+			
+		} else if(rollingline == 3){
+			if(rndm.nextInt(2) == 0) {
+				pins[1] = '·';
+				++count;
+				if(rndm.nextInt(3) == 2) {
+					pins[2] = '·';
+					++count;
+					if(rndm.nextInt(4) == 2) {
+						pins[5] = '·';
+						++count;
+						if(rndm.nextInt(10) == 2) {
+							pins[8] = '·';
+							++count;
+						}
+						if(rndm.nextInt(3) == 2) {
+							pins[9] = '·';
+							++count;
+						}
+					}// end if
+				}
+				
+				if(rndm.nextInt(3) == 2) {
+					pins[3] = '·';
+					++count;
+					if(rndm.nextInt(4) == 2) {
+						pins[6] = '·';
+						++count;
+						
+					}
+					if(rndm.nextInt(10) == 2) {
+						pins[7] = '·';
+						++count;
+					}
+				}
+					
+					
+			}
+			
+			//else case
+			if(rndm.nextInt(2) == 0) {
+				pins[3] = '·';
+				++count;
+				if(rndm.nextInt(50) == 42) {
+					pins[4] = '·';
+					++count;
+					if(rndm.nextInt(100) == 42) {
+						pins[8] = '·';
+						++count;
+					}
+				}
+				
+				if(rndm.nextInt(4) == 2) {
+					pins[7] = '·';
+					++count;
+					if(rndm.nextInt(100) == 42) {
+						if(pins[8] != '·') {
+							pins[8] = '·';
+							++count;
+						}
+					}
+				}
+				
+				//else else case
+				if(rndm.nextInt(4) == 2) {
+					pins[6] = '·';
+					++count;
+				}
+			
+			}
+			
+		} // end if
+		
 		System.out.println(count);
 		
 	}
@@ -50,12 +160,14 @@ public class Game {
 		int rollnum = 1;
 		char h = ' ';
 		
+		//Select movement type
 		while(!done) {
 			done2 = true;
 			printLane(pins, rollnum);
 			System.out.println("U: Move arrow up\n"
 							 + "D: Move arrow down\n"
 							 + "R: Roll ball");
+			//Input Validation
 			while(done2) {
 				System.out.print("> ");
 				h = scnr.next().toUpperCase().charAt(0);
