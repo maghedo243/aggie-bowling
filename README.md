@@ -1,2 +1,2 @@
-# aggie-bowling
-This is a text-based bowling game.
+# Aggie Bowling
+This is a text-based bowling game. (Currently in indev phase)
