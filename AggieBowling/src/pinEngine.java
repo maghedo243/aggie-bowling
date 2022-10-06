@@ -101,6 +101,7 @@ public class pinEngine {
 	}
 	
 	public static int pin9(int origin, char[] pins, double rate) {
+		pins[8] = '·';
 		return 1;
 	}
 	
