@@ -14,6 +14,7 @@ public class Central {
 		
 		
 		Game.resetPins(pingroup);
+		
 		Game.takeTurn(pingroup);
 		Game.printLane(pingroup, 0);
 	}

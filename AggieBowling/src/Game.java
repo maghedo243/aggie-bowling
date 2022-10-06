@@ -24,130 +24,9 @@ public class Game {
 	public static void rollBall(char[] pins,int rollingline) {
 		int count = 0;
 		//Roll Calculations
-		//Line 1
 		if(rollingline == 1) {
-			if(rndm.nextInt(2) == 0) {
-				pins[6] = '·';
-				++count;
-				if(rndm.nextInt(50) == 42) {
-					pins[7] = '·';
-					++count;
-				}
-			}
-			
-		} //Line 2
-		else if(rollingline == 2) {
-			if(rndm.nextInt(2) == 0) {
-				pins[3] = '·';
-				++count;
-				if(rndm.nextInt(50) == 42) {
-					pins[4] = '·';
-					++count;
-					if(rndm.nextInt(100) == 42) {
-						pins[8] = '·';
-						++count;
-					}
-				}
-				
-				if(rndm.nextInt(4) == 2) {
-					pins[7] = '·';
-					++count;
-					if(rndm.nextInt(100) == 42) {
-						if(pins[8] != '·') {
-							pins[8] = '·';
-							++count;
-						}
-					}
-				}
-				
-				if(rndm.nextInt(4) == 2) {
-					pins[6] = '·';
-					++count;
-				}
-				
-				return;	
-			} //end if
-			
-			//else case - if the top pin is misses
-			if(rndm.nextInt(2) == 0) {
-				if(pins[6] != '·') {
-					pins[6] = '·';
-					++count;
-				}
-			}
-			
-		} //Line 3
-		else if(rollingline == 3){
-			if(rndm.nextInt(2) == 0) {
-				pins[1] = '·';
-				++count;
-				if(rndm.nextInt(3) == 2) {
-					pins[2] = '·';
-					++count;
-					if(rndm.nextInt(4) == 2) {
-						pins[5] = '·';
-						++count;
-						if(rndm.nextInt(10) == 2) {
-							pins[8] = '·';
-							++count;
-						}
-						if(rndm.nextInt(3) == 2) {
-							pins[9] = '·';
-							++count;
-						}
-					}// end if
-				}
-				
-				if(rndm.nextInt(3) == 2) {
-					pins[3] = '·';
-					++count;
-					if(rndm.nextInt(4) == 2) {
-						pins[6] = '·';
-						++count;
-						
-					}
-					if(rndm.nextInt(10) == 2) {
-						pins[7] = '·';
-						++count;
-					}
-				}
-					
-					
-			}
-			
-			//else case
-			if(rndm.nextInt(2) == 0) {
-				pins[3] = '·';
-				++count;
-				if(rndm.nextInt(50) == 42) {
-					pins[4] = '·';
-					++count;
-					if(rndm.nextInt(100) == 42) {
-						pins[8] = '·';
-						++count;
-					}
-				}
-				
-				if(rndm.nextInt(4) == 2) {
-					pins[7] = '·';
-					++count;
-					if(rndm.nextInt(100) == 42) {
-						if(pins[8] != '·') {
-							pins[8] = '·';
-							++count;
-						}
-					}
-				} // end if
-				
-				//else else case
-				if(rndm.nextInt(4) == 2) {
-					pins[6] = '·';
-					++count;
-				}
-			
-			}
-			
-		} // end if
+			count = pinEngine.pin7(7,pins,1);
+		}
 		
 		System.out.println(count);
 		
@@ -157,7 +36,6 @@ public class Game {
 	//Method to choose the line you roll the ball in
 	public static int selectLine(char[] pins) {
 		Scanner scnr = new Scanner(System.in);
-		System.out.println("FIXME: Roll ball");
 		boolean done = false;
 		boolean done2 = true;
 		int rollnum = 1;
