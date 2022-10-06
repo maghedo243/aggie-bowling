@@ -34,9 +34,10 @@ public class pinEngine {
 			if(rndm.nextInt((int) (2*rate)) == 1) {
 				if(pins[6] != '·') {
 					count++;
+					count += pin8(7,pins,2);
 				}
 				pins[6] = '·';
-				count += pin8(7,pins,2);
+				
 			}
 		} else if (origin == 4) {
 			if(rndm.nextInt((int) (3*rate)) == 2) {
@@ -101,6 +102,9 @@ public class pinEngine {
 	}
 	
 	public static int pin9(int origin, char[] pins, double rate) {
+		int count = 0;
+		
+		
 		pins[8] = '·';
 		return 1;
 	}
