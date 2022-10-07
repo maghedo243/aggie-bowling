@@ -149,11 +149,10 @@ public class pinEngine {
 			if(rndm.nextInt((int) (2*rate)) == 1) {
 				if(pins[9] != '·') {
 					count++;
-				}
-				pins[9] = '·';
-				if(pins[8] != '·') {
 					count += pin9(10,pins,3);
 				}
+				pins[9] = '·';
+				
 			}
 		} else if (origin == 9) {
 			if(rndm.nextInt((int) (2*rate)) == 1) {
