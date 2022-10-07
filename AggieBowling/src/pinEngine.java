@@ -31,8 +31,8 @@ public class pinEngine {
 				
 			}
 			
-			if(pins[3] == '·' && pins[6] != '·') {
-				count += pin7(4,pins,1);
+			if(pins[3] == '·' && pins[7] != '·') {
+				count += pin8(4,pins,1);
 			}
 			
 			
@@ -116,9 +116,10 @@ public class pinEngine {
 				count += pin10(6,pins,1);
 			}
 			
-			if(pins[5] == '·' && pins[9] != '·') {
-				count += pin10(6,pins,1);
+			if(pins[5] == '·' && pins[8] != '·') {
+				count += pin9(6,pins,1);
 			}
+			
 		} else if(origin == 3) {
 			if(rndm.nextInt((int) (2*rate)) == 1) {
 				if(pins[5] != '·') {
