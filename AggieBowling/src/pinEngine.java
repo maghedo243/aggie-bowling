@@ -70,7 +70,7 @@ public class pinEngine {
 				}
 				pins[7] = '·';
 				if(pins[8] != '·') {
-					count += pin9(8,pins,5);
+					count += pin9(8,pins,4);
 				}
 			}
 		} else if (origin == 4 || origin == 5) {
@@ -93,7 +93,7 @@ public class pinEngine {
 				}
 				pins[7] = '·';
 				if(pins[6] != '·') {
-					count += pin7(8,pins,5);
+					count += pin7(8,pins,4);
 				}
 			}
 		}
@@ -110,7 +110,7 @@ public class pinEngine {
 				}
 				pins[8] = '·';
 				if(pins[9] != '·') {
-					count += pin10(9,pins,5);
+					count += pin10(9,pins,4);
 				}
 				
 			}
@@ -134,19 +134,47 @@ public class pinEngine {
 				}
 				pins[8] = '·';
 				if(pins[7] != '·') {
-					count += pin8(9,pins,5);
+					count += pin8(9,pins,4);
 				}
 				
 			}
 		}
 		
-		
 		return count;
 	}
 	
 	public static int pin10(int origin, char[] pins, double rate) {
-		pins[9] = '·';
+		int count = 0;
+		if(origin == 10) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[9] != '·') {
+					count++;
+				}
+				pins[9] = '·';
+				if(pins[8] != '·') {
+					count += pin9(10,pins,3);
+				}
+			}
+		} else if (origin == 9) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[9] != '·') {
+					count++;
+				}
+				pins[9] = '·';
+			}
+		} else if(origin == 6) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[9] != '·') {
+					count++;
+				}
+				pins[9] = '·';
+				if(pins[8] != '·') {
+					count += pin9(10,pins,2);
+				}
+			}
+		}
 		
-		return 1;
+		
+		return count;
 	}
 }

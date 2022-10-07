@@ -26,6 +26,8 @@ public class Game {
 		//Roll Calculations
 		if(rollingline == 1) {
 			count = pinEngine.pin7(7,pins,1);
+		} else if (rollingline == 7) {
+			count = pinEngine.pin10(10, pins, 1);
 		}
 		
 		System.out.println(count);
