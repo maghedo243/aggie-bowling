@@ -14,23 +14,25 @@ public class Game {
 	}
 
 	
-	public static void takeTurn(char[] pins) {
+	public static int takeTurn(char[] pins) {
 		int line = selectLine(pins);
-		rollBall(pins,line);
+		return rollBall(pins,line);
 		
 	}
 	
 	//Roll Ball function
-	public static void rollBall(char[] pins,int rollingline) {
+	public static int rollBall(char[] pins,int rollingline) {
 		int count = 0;
 		//Roll Calculations
 		if(rollingline == 1) {
 			count = pinEngine.pin7(7,pins,1);
+		} else if (rollingline == 2) {
+			count = pinEngine.pin4(4, pins, 1);
 		} else if (rollingline == 7) {
 			count = pinEngine.pin10(10, pins, 1);
 		}
 		
-		System.out.println(count);
+		return count;
 		
 	}
 	

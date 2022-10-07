@@ -2,6 +2,7 @@
 public class Central {
 
 	public static void main(String[] args) {
+		int num;
 		char[] pingroup = {'●','·','●','●','·','·','●','●','·','●'};
 		System.out.println("\n"
 				+ " █████╗  ██████╗  ██████╗ ██╗███████╗    ██████╗  ██████╗ ██╗    ██╗██╗     ██╗███╗   ██╗ ██████╗ \n"
@@ -15,8 +16,11 @@ public class Central {
 		
 		Game.resetPins(pingroup);
 		
-		Game.takeTurn(pingroup);
+		num = Game.takeTurn(pingroup);
+		
 		Game.printLane(pingroup, 0);
+		
+		System.out.println("You hit "+num+" pins!");
 	}
 
 }
