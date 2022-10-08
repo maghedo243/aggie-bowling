@@ -9,7 +9,11 @@ public class pinEngine {
 	}
 	
 	public static void pin2(int origin, char[] pins, double rate) {
-		
+		if(origin == 2) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				
+			}
+		}
 	}
 	
 	public static void pin3(int origin, char[] pins, double rate) {
@@ -29,6 +33,8 @@ public class pinEngine {
 				count += pin7(4,pins,1);
 				count += pin8(4,pins,1);
 				
+			} else {
+				count += pin7(4,pins,2);
 			}
 			
 			if(pins[3] == '·' && pins[7] != '·') {
@@ -99,13 +105,18 @@ public class pinEngine {
 	public static int pin6(int origin, char[] pins, double rate) {
 		int count = 0;
 		if(origin == 6) {
-			if(pins[5] != '·') {
-				count++;
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[5] != '·') {
+					count++;
+				}
+				pins[5] = '·';
+				count += pin5(6,pins,4);
+				count += pin9(6,pins,1);
+				count += pin10(6,pins,1);
+			} else {
+				count += pin10(6,pins,2);
 			}
-			pins[5] = '·';
-			count += pin5(6,pins,4);
-			count += pin9(6,pins,1);
-			count += pin10(6,pins,1);
+			
 		} else if (origin == 5) {
 			if(rndm.nextInt((int) (2*rate)) == 1) {
 				if(pins[5] != '·') {

@@ -21,7 +21,7 @@ public class Game {
 	}
 	
 	//Roll Ball function
-	public static int rollBall(char[] pins,int rollingline) {
+	public static int rollBall(char[] pins, int rollingline) {
 		int count = 0;
 		//Roll Calculations
 		if(rollingline == 1) {
