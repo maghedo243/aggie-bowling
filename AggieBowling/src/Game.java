@@ -30,6 +30,8 @@ public class Game {
 			count = pinEngine.pin4(4, pins, 1);
 		} else if (rollingline == 3) {
 			count = pinEngine.pin2(2, pins, 1);
+		} else if (rollingline == 4) {
+			count = pinEngine.pin1(1, pins, 1);
 		} else if (rollingline == 5) {
 			count = pinEngine.pin3(3, pins, 1);
 		} else if (rollingline == 6) {
@@ -48,7 +50,7 @@ public class Game {
 		Scanner scnr = new Scanner(System.in);
 		boolean done = false;
 		boolean done2 = true;
-		int rollnum = 1;
+		int rollnum = 4;
 		char h = ' ';
 		
 		//Select movement type
@@ -104,43 +106,43 @@ public class Game {
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("                                 ➤                                                            "+pins[6]+"  ▕");
+		System.out.println("                                 ➤                                                          "+(lanearrow == 1 ? "> " : "  ")+pins[6]+"  ▕");
 		if(lanearrow == 2) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                            ➤                                                         "+pins[3]+"    ▕");
+		System.out.println("   · ·                            ➤                                                       "+(lanearrow == 2 ? "> " : "  ")+pins[3]+"    ▕");
 		if(lanearrow == 3) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                             ➤                                                      "+pins[1]+"   "+pins[7]+"  ▕");
+		System.out.println("   · ·                             ➤                                                    "+(lanearrow == 3 ? "> " : "  ")+pins[1]+"   "+pins[7]+"  ▕");
 		if(lanearrow == 4) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                              ➤                                                   "+pins[0]+"   "+pins[4]+"    ▕");
+		System.out.println("   · ·                              ➤                                                 "+(lanearrow == 4 ? "> " : "  ")+pins[0]+"   "+pins[4]+"    ▕");
 		if(lanearrow == 5) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                             ➤                                                      "+pins[2]+"   "+pins[8]+"  ▕");
+		System.out.println("   · ·                             ➤                                                    "+(lanearrow == 5 ? "> " : "  ")+pins[2]+"   "+pins[8]+"  ▕");
 		if(lanearrow == 6) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("   · ·                            ➤                                                         "+pins[5]+"    ▕");
+		System.out.println("   · ·                            ➤                                                       "+(lanearrow == 6 ? "> " : "  ")+pins[5]+"    ▕");
 		if(lanearrow == 7 ) {
 			System.out.print("-->▕");
 		} else {
 			System.out.print("   ▕");
 		}
-		System.out.println("                                 ➤                                                            "+pins[9]+"  ▕");
+		System.out.println("                                 ➤                                                          "+(lanearrow == 7 ? "> " : "  ")+pins[9]+"  ▕");
 		System.out.println("   ▕                                                                                                 ▕");
 		System.out.println("    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
 	}

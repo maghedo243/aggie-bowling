@@ -4,8 +4,22 @@ public class pinEngine {
 	
 	static Random rndm = new Random();
 	
-	public static void pin1(int origin, char[] pins, double rate) {
+	public static int pin1(int origin, char[] pins, double rate) {
+		int count = 0;
+		if(rndm.nextInt((int) (2*rate)) == 1) {
+			if(pins[0] != '·') {
+				count++;
+			}
+			pins[0] = '·';
+			
+			count += pin2(1,pins,1);
+			count += pin3(1,pins,1);
+		} else {
+			count += pin2(1,pins,1);
+			count += pin3(1,pins,1);
+		}
 		
+		return count;
 	}
 	
 	public static int pin2(int origin, char[] pins, double rate) {
