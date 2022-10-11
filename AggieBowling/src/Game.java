@@ -28,6 +28,10 @@ public class Game {
 			count = pinEngine.pin7(7,pins,1);
 		} else if (rollingline == 2) {
 			count = pinEngine.pin4(4, pins, 1);
+		} else if (rollingline == 3) {
+			count = pinEngine.pin2(2, pins, 1);
+		} else if (rollingline == 5) {
+			count = pinEngine.pin3(3, pins, 1);
 		} else if (rollingline == 6) {
 			count = pinEngine.pin6(6, pins, 1);
 		} else if (rollingline == 7) {

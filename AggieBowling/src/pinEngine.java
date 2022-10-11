@@ -8,16 +8,87 @@ public class pinEngine {
 		
 	}
 	
-	public static void pin2(int origin, char[] pins, double rate) {
+	public static int pin2(int origin, char[] pins, double rate) {
+		int count = 0;
 		if(origin == 2) {
 			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[1] != '·') {
+					count++;
+				}
+				pins[1] = '·';
 				
+				count += pin3(2,pins,4);
+				count += pin4(2,pins,1);
+				count += pin5(2,pins,1);
+			} else {
+				count += pin4(2,pins,3);
+			}
+			
+		} else if (origin == 3) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[1] != '·') {
+					count++;
+				}
+				pins[1] = '·';
+				
+				count += pin4(2,pins,2);
+				count += pin5(2,pins,2);
+			}
+		} else if (origin == 1) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[1] != '·') {
+					count++;
+				}
+				pins[1] = '·';
+				count += pin3(2,pins,4);
+				count += pin4(2,pins,1);
+				count += pin5(2,pins,1);
 			}
 		}
+		
+		return count;
 	}
 	
-	public static void pin3(int origin, char[] pins, double rate) {
+	public static int pin3(int origin, char[] pins, double rate) {
+		int count = 0;
+		if(origin == 3) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[2] != '·') {
+					count++;
+				}
+				pins[2] = '·';
+				
+				count += pin2(3,pins,4);
+				count += pin5(3,pins,1);
+				count += pin6(3,pins,1);
+			} else {
+				count += pin6(3,pins,3);
+			}
+			
+		} else if (origin == 2) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[2] != '·') {
+					count++;
+				}
+				pins[2] = '·';
+				
+				count += pin5(3,pins,2);
+				count += pin6(3,pins,2);
+			}
+		} else if (origin == 1) {
+			if(rndm.nextInt((int) (2*rate)) == 1) {
+				if(pins[2] != '·') {
+					count++;
+				}
+				pins[2] = '·';
+				
+				count += pin2(3,pins,4);
+				count += pin5(3,pins,1);
+				count += pin6(3,pins,1);
+			}
+		}
 		
+		return count;
 	}
 	
 	public static int pin4(int origin, char[] pins, double rate) {
@@ -136,6 +207,8 @@ public class pinEngine {
 				if(pins[5] != '·') {
 					count++;
 				}	
+				pins[5] = '·';
+				
 				count += pin5(6,pins,4);
 				count += pin9(6,pins,1);
 				count += pin10(6,pins,1);
