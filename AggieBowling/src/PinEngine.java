@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class pinEngine {
+public class PinEngine {
 	
 	static Random rndm = new Random();
 	

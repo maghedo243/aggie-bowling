@@ -18,6 +18,10 @@ public class Central {
 		
 		num = Game.takeTurn(pingroup);
 		
+		System.out.println("You hit "+num+" pins!");
+		
+		num = Game.takeTurn(pingroup);
+		
 		Game.printLane(pingroup, 0);
 		
 		System.out.println("You hit "+num+" pins!");

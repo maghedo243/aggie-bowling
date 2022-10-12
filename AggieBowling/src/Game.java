@@ -25,19 +25,19 @@ public class Game {
 		int count = 0;
 		//Roll Calculations
 		if(rollingline == 1) {
-			count = pinEngine.pin7(7,pins,1);
+			count = PinEngine.pin7(7,pins,1);
 		} else if (rollingline == 2) {
-			count = pinEngine.pin4(4, pins, 1);
+			count = PinEngine.pin4(4, pins, 1);
 		} else if (rollingline == 3) {
-			count = pinEngine.pin2(2, pins, 1);
+			count = PinEngine.pin2(2, pins, 1);
 		} else if (rollingline == 4) {
-			count = pinEngine.pin1(1, pins, 1);
+			count = PinEngine.pin1(1, pins, 1);
 		} else if (rollingline == 5) {
-			count = pinEngine.pin3(3, pins, 1);
+			count = PinEngine.pin3(3, pins, 1);
 		} else if (rollingline == 6) {
-			count = pinEngine.pin6(6, pins, 1);
+			count = PinEngine.pin6(6, pins, 1);
 		} else if (rollingline == 7) {
-			count = pinEngine.pin10(10, pins, 1);
+			count = PinEngine.pin10(10, pins, 1);
 		}
 		
 		return count;
