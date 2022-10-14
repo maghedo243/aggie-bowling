@@ -146,4 +146,45 @@ public class Game {
 		System.out.println("   ▕                                                                                                 ▕");
 		System.out.println("    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
 	}
+
+	
+	//Prints frames for one player
+	public static void printFrames(int[] frames) {
+		System.out.println(" ____________________________________________________________\n"
+				+ "|__1__|__2__|__3__|__4__|__5__|__6__|__7__|__8__|__9__|__10__|\n"
+				
+				+ "|  "+(frameOneCalc(frames[0],frames[1]))+"|"+(frameTwoCalc(frames[0],frames[1]))+"|  "+(frameOneCalc(frames[2],frames[3]))+"|"+(frameTwoCalc(frames[2],frames[3]))+"|  "+(frameOneCalc(frames[4],frames[5]))+"|"+(frameTwoCalc(frames[4],frames[5]))+"|  "+(frameOneCalc(frames[6],frames[7]))+"|"+(frameTwoCalc(frames[6],frames[7]))+"|  "+(frameOneCalc(frames[8],frames[9]))+"|"+(frameTwoCalc(frames[8],frames[9]))+"|  "+(frameOneCalc(frames[10],frames[11]))+"|"+(frameTwoCalc(frames[10],frames[11]))+"|  "+(frameOneCalc(frames[12],frames[13]))+"|"+(frameTwoCalc(frames[12],frames[13]))+"|  "+(frameOneCalc(frames[14],frames[15]))+"|"+(frameTwoCalc(frames[14],frames[15]))+"|  "+(frameOneCalc(frames[16],frames[17]))+"|"+(frameTwoCalc(frames[16],frames[17]))+"|  |_|_|\n"
+				
+				+ "|     |     |     |     |     |     |     |     |     |      |\n"
+				+ "|_____|_____|_____|_____|_____|_____|_____|_____|_____|______|\n"
+				+ "");
+	}
+	
+	public static String frameOneCalc(int a, int b) {
+		if(a == 0) {
+			return "-";
+		} else if (a == 10 ||  a == -1){
+			return " ";
+		} else if(a + b < 10) {
+			return a + "";
+		} else if (a != 10) {
+			return a + "";
+		} else {
+			return "-";
+		}
+	}
+	
+	public static String frameTwoCalc(int a, int b) {
+		if(a == 0 && b == 0) {
+			return "-";
+		} else if (b == -1) {
+			return "_";
+		} else if(a + b < 10) {
+			return b + "";
+		} else if (a != 10 || a == 0 && b == 10) {
+			return "/";
+		} else {
+			return "X";
+		}
+	}
 }
