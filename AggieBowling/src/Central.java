@@ -4,7 +4,7 @@ public class Central {
 	public static void main(String[] args) {
 		int num;
 		char[] pingroup = {'●','·','●','●','·','·','●','●','·','●'};
-		int[] scores = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0};
+		int[] scores = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 		System.out.println("\n"
 				+ " █████╗  ██████╗  ██████╗ ██╗███████╗    ██████╗  ██████╗ ██╗    ██╗██╗     ██╗███╗   ██╗ ██████╗ \n"
 				+ "██╔══██╗██╔════╝ ██╔════╝ ██║██╔════╝    ██╔══██╗██╔═══██╗██║    ██║██║     ██║████╗  ██║██╔════╝ \n"
@@ -17,7 +17,7 @@ public class Central {
 		
 		Game.resetPins(pingroup);
 		
-		Game.printFrames(scores);
+		frameEngine.printFrames(scores);
 	}
 
 }
