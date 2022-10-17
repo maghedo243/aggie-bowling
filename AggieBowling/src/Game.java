@@ -20,6 +20,7 @@ public class Game {
 		
 	}
 	
+	
 	//Roll Ball function
 	public static int rollBall(char[] pins, int rollingline) {
 		int count = 0;

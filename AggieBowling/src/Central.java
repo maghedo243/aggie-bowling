@@ -4,7 +4,6 @@ public class Central {
 	public static void main(String[] args) {
 		int num;
 		char[] pingroup = {'●','·','●','●','·','·','●','●','·','●'};
-		int[] scores = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 		System.out.println("\n"
 				+ " █████╗  ██████╗  ██████╗ ██╗███████╗    ██████╗  ██████╗ ██╗    ██╗██╗     ██╗███╗   ██╗ ██████╗ \n"
 				+ "██╔══██╗██╔════╝ ██╔════╝ ██║██╔════╝    ██╔══██╗██╔═══██╗██║    ██║██║     ██║████╗  ██║██╔════╝ \n"
@@ -16,8 +15,11 @@ public class Central {
 		
 		
 		Game.resetPins(pingroup);
+		Player poggers = new Player();
 		
-		frameEngine.printFrames(scores);
+		frameEngine.printFrames(poggers.pinsKnocked);
+		System.out.println(poggers.getPinScoreArray());
+		System.out.println(poggers.getName());
 	}
 
 }
