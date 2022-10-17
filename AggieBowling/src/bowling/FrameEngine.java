@@ -1,5 +1,6 @@
+package bowling;
 
-public class frameEngine {
+public class FrameEngine {
 	
 	//Prints frames for 1 player
 	public static void printFrames(int[] frames) {

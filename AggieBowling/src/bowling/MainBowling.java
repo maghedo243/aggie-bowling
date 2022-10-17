@@ -1,8 +1,9 @@
+package bowling;
 import java.util.Random;
 import java.util.Scanner;
 
 
-public class Game {
+public class MainBowling {
 	
 	static Random rndm = new Random();
 	

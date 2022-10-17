@@ -1,3 +1,5 @@
+package bowling;
+
 import java.util.Random;
 
 public class PinEngine {

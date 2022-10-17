@@ -1,39 +1,47 @@
 
 public class Player {
-	private String name;
-	private int totalscore = 0;
-	public int[] pinsKnocked = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+	private String _name;
+	private int _totalscore = 0;
+	private int[] _pinsKnocked = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 	
 	public Player() {
-		name = "NPC";
+		this._name = "NPC";
 	}
 	
 	public Player(String name) {
-		this.name = name;
+		this._name = name;
 	}
 	
 	public String getName() {
-		return name;
+		return _name;
 	}
 
 	
 	public void setName(String name) {
-		this.name = name;
+		this._name = name;
 	}
 
 
 	public int getScore() {
-		return totalscore;
+		return _totalscore;
 	}
 
 
 	public void setScore(int score) {
-		this.totalscore = score;
+		this._totalscore = score;
 	}
 	
+	public int[] getPinsKnocked() {
+		return _pinsKnocked;
+	}
+
+	public void setPinsKnocked(int[] pinsKnocked) {
+		this._pinsKnocked = pinsKnocked;
+	}
+
 	public String getPinScoreArray() {
 		String out = "{";
-		for(int x: this.pinsKnocked) {
+		for(int x: this._pinsKnocked) {
 			out += x + ",";
 		}
 		out = out.substring(0,out.length()-1);
