@@ -1,4 +1,4 @@
-import bowling.*;
+package main;
 
 public class Central {
 
@@ -15,7 +15,7 @@ public class Central {
 				+ "");
 		
 		
-		MainBowling.resetPins(pingroup);
+		bowling.MainBowling.resetPins(pingroup);
 		Player poggers = new Player();
 		
 		int[] testy = poggers.getPinsKnocked();
@@ -25,7 +25,7 @@ public class Central {
 		
 		poggers.setPinsKnocked(testy);
 		
-		FrameEngine.printFrames(poggers.getPinsKnocked());
+		bowling.FrameEngine.printFrames(poggers.getPinsKnocked());
 		System.out.println(poggers.getPinScoreArray());
 		System.out.println(poggers.getName());
 	}
