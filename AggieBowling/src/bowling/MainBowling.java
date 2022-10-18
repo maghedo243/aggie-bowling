@@ -18,8 +18,7 @@ public class MainBowling {
 	
 	public static int takeTurn(char[] pins) {
 		int line = selectLine(pins);
-		return rollBall(pins,line);
-		
+		return rollBall(pins,line);	
 	}
 	
 	
