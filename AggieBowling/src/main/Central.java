@@ -3,7 +3,6 @@ package main;
 public class Central {
 
 	public static void main(String[] args) {
-		int num = 0;
 		char[] pingroup = {'●','·','●','●','·','·','●','●','·','●'};
 		System.out.println("\n"
 				+ " █████╗  ██████╗  ██████╗ ██╗███████╗    ██████╗  ██████╗ ██╗    ██╗██╗     ██╗███╗   ██╗ ██████╗ \n"
