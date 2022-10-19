@@ -21,7 +21,7 @@ public class Central {
 		int[] testy = poggers.getPinsKnocked();
 		
 		for(int i = 0; i < 22;i++) {
-			testy[i] = bowling.MainBowling.takeTurn(pingroup);
+			testy[i] = poggers.takeTurn(pingroup);
 			
 			poggers.setPinsKnocked(testy);
 			bowling.FrameEngine.printFrames(poggers.getPinsKnocked());
@@ -31,7 +31,7 @@ public class Central {
 			i++;
 			
 			
-			testy[i] = bowling.MainBowling.takeTurn(pingroup);
+			testy[i] = poggers.takeTurn(pingroup);
 			
 			
 			poggers.setPinsKnocked(testy);

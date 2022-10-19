@@ -14,12 +14,6 @@ public class MainBowling {
 			pins[i] = '●';
 		}
 	}
-
-	
-	public static int takeTurn(char[] pins) {
-		int line = selectLine(pins);
-		return rollBall(pins,line);	
-	}
 	
 	
 	//Roll Ball function

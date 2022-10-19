@@ -21,7 +21,11 @@ public class Player {
 		return out;
 	}
 	
-	
+	public int takeTurn(char[] pins) {
+		int line = bowling.MainBowling.selectLine(pins);
+		int pinsy = bowling.MainBowling.rollBall(pins,line);
+		return pinsy;
+	}
 	
 	//Getters and Setters
 	public String getName() {
