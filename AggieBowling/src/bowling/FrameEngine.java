@@ -74,7 +74,7 @@ public class FrameEngine {
 	
 	//Calculates 2nd framebox
 	public static String boxTwoCalc(int a, int b) {
-		if(a == 0 && b == 0) {
+		if(a == 0 && b == 0 || a != 10 && b == 0 && a != 0) {
 			return "-";
 		} else if (b == -1) {
 			return "_";

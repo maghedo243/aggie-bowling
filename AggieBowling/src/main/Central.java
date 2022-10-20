@@ -18,35 +18,11 @@ public class Central {
 		
 		Player poggers = new Player("Kyle");
 		
-		int[] testy = poggers.getPinsKnocked();
+		poggers.takeTurn(pingroup);
 		
-		for(int i = 0; i < 22;i++) {
-			testy[i] = poggers.takeTurn(pingroup);
-			
-			poggers.setPinsKnocked(testy);
-			bowling.FrameEngine.printFrames(poggers.getPinsKnocked());
-			testy = poggers.getPinsKnocked();
-			
-			
-			i++;
-			
-			
-			testy[i] = poggers.takeTurn(pingroup);
-			
-			
-			poggers.setPinsKnocked(testy);
-			bowling.FrameEngine.printFrames(poggers.getPinsKnocked());
-			testy = poggers.getPinsKnocked();
-			
-			
-			bowling.MainBowling.resetPins(pingroup);
-			
-			if(i == 19) {
-				if(testy[18] + testy[19] <= 10) {
-					break;
-				}
-			}
-		}
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
 		
 		System.out.println();
 		System.out.println(poggers.toString());
