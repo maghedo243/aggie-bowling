@@ -29,7 +29,7 @@ public class Player {
 		pinsy = bowling.MainBowling.rollBall(pins,line);
 		this._pinsKnocked[determineFrame(1)] = pinsy;
 		
-		bowling.FrameEngine.printFrames(this._pinsKnocked);
+		bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
 		
 		line = bowling.MainBowling.selectLine(pins);
 		pinsy = bowling.MainBowling.rollBall(pins,line);
@@ -37,7 +37,7 @@ public class Player {
 		
 		this._currentframe++;
 		
-		bowling.FrameEngine.printFrames(this._pinsKnocked);
+		bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
 		
 		return pinsy;
 	}

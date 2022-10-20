@@ -24,6 +24,36 @@ public class Central {
 		
 		poggers.takeTurn(pingroup);
 		
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+		
+		bowling.MainBowling.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+		
+		
+		
 		System.out.println();
 		System.out.println(poggers.toString());
 	}

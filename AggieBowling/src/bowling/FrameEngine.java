@@ -3,57 +3,82 @@ package bowling;
 public class FrameEngine {
 	
 	//Prints frames for 1 player
-	public static void printFrames(int[] frames) {
+	public static void printFrames(int[] boxes,int[]frames) {
 		System.out.println(" ____________________________________________________________");
 		System.out.println("|__1__|__2__|__3__|__4__|__5__|__6__|__7__|__8__|__9__|__10__|");
 		
 		//Box Line
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[0],frames[1])); //box 1
+		System.out.print(boxOneCalc(boxes[0],boxes[1])); //box 1
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[0],frames[1])); //box 2
+		System.out.print(boxTwoCalc(boxes[0],boxes[1])); //box 2
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[2],frames[3])); //box 3
+		System.out.print(boxOneCalc(boxes[2],boxes[3])); //box 3
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[2],frames[3])); //box 4
+		System.out.print(boxTwoCalc(boxes[2],boxes[3])); //box 4
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[4],frames[5])); //box 5
+		System.out.print(boxOneCalc(boxes[4],boxes[5])); //box 5
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[4],frames[5])); //box 6
+		System.out.print(boxTwoCalc(boxes[4],boxes[5])); //box 6
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[6],frames[6])); //box 7
+		System.out.print(boxOneCalc(boxes[6],boxes[6])); //box 7
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[6],frames[7])); //box 8
+		System.out.print(boxTwoCalc(boxes[6],boxes[7])); //box 8
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[8],frames[9])); //box 9
+		System.out.print(boxOneCalc(boxes[8],boxes[9])); //box 9
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[8],frames[9])); //box 10
+		System.out.print(boxTwoCalc(boxes[8],boxes[9])); //box 10
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[10],frames[11])); //box 11
+		System.out.print(boxOneCalc(boxes[10],boxes[11])); //box 11
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[10],frames[11])); //box 12
+		System.out.print(boxTwoCalc(boxes[10],boxes[11])); //box 12
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[12],frames[13])); //box 12
+		System.out.print(boxOneCalc(boxes[12],boxes[13])); //box 12
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[12],frames[13])); //box 14
+		System.out.print(boxTwoCalc(boxes[12],boxes[13])); //box 14
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[14],frames[1])); //box 15
+		System.out.print(boxOneCalc(boxes[14],boxes[1])); //box 15
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[14],frames[15])); //box 16
+		System.out.print(boxTwoCalc(boxes[14],boxes[15])); //box 16
 		System.out.print("|  ");
-		System.out.print(boxOneCalc(frames[16],frames[17])); //box 17
+		System.out.print(boxOneCalc(boxes[16],boxes[17])); //box 17
 		System.out.print("|");
-		System.out.print(boxTwoCalc(frames[16],frames[17])); //box 18
+		System.out.print(boxTwoCalc(boxes[16],boxes[17])); //box 18
 		System.out.print("| ");
-		System.out.print(lastBoxOneCalc(frames[18],frames[19],frames[20])); //box 19
+		System.out.print(lastBoxOneCalc(boxes[18],boxes[19],boxes[20])); //box 19
 		System.out.print("|");
-		System.out.print(lastBoxTwoCalc(frames[18],frames[19],frames[20])); //box 20
+		System.out.print(lastBoxTwoCalc(boxes[18],boxes[19],boxes[20])); //box 20
 		System.out.print("|");
-		System.out.print(lastBoxThreeCalc(frames[18],frames[19],frames[20])); //box 21
+		System.out.print(lastBoxThreeCalc(boxes[18],boxes[19],boxes[20])); //box 21
 		System.out.println("|");
 		//end box line
 		
-		System.out.println("|     |     |     |     |     |     |     |     |     |      |");
+		//Frame Score Line
+		System.out.print("| ");
+		System.out.print(frames[0] < 0 ? "   " : (frames[0] < 10 ? " "+frames[0]+" ": (frames[0] < 100 ? " "+frames[0] : frames[0])));
+		System.out.print(" | ");
+		System.out.print(frames[1] < 0 ? "   " : (frames[1] < 10 ? " "+frames[1]+" ": (frames[1] < 100 ? " "+frames[1] : frames[1])));
+		System.out.print(" | ");
+		System.out.print(frames[2] < 0 ? "   " : (frames[2] < 10 ? " "+frames[2]+" ": (frames[2] < 100 ? " "+frames[2] : frames[2])));
+		System.out.print(" | ");
+		System.out.print(frames[3] < 0 ? "   " : (frames[3] < 10 ? " "+frames[3]+" ": (frames[3] < 100 ? " "+frames[3] : frames[3])));		
+		System.out.print(" | ");
+		System.out.print(frames[4] < 0 ? "   " : (frames[4] < 10 ? " "+frames[4]+" ": (frames[4] < 100 ? " "+frames[4] : frames[4])));
+		System.out.print(" | ");
+		System.out.print(frames[5] < 0 ? "   " : (frames[5] < 10 ? " "+frames[5]+" ": (frames[5] < 100 ? " "+frames[5] : frames[5])));
+		System.out.print(" | ");
+		System.out.print(frames[6] < 0 ? "   " : (frames[6] < 10 ? " "+frames[6]+" ": (frames[6] < 100 ? " "+frames[6] : frames[6])));
+		System.out.print(" | ");
+		System.out.print(frames[7] < 0 ? "   " : (frames[7] < 10 ? " "+frames[7]+" ": (frames[7] < 100 ? " "+frames[7] : frames[7])));
+		System.out.print(" | ");
+		System.out.print(frames[8] < 0 ? "   " : (frames[8] < 10 ? " "+frames[8]+" ": (frames[8] < 100 ? " "+frames[8] : frames[8])));
+		System.out.print(" | ");
+		
+		System.out.print(frames[9] < 0 ? "    " : (frames[9] < 10 ? "  "+frames[9] + " " : (frames[9] < 100 ? " " + frames[9] + " " : " " +frames[9])));
+		
+		System.out.println(" |");
+		//end frame score line
+		
 		System.out.println("|_____|_____|_____|_____|_____|_____|_____|_____|_____|______|");
 	}
 	
