@@ -6,6 +6,13 @@ public class PinEngine {
 	
 	static Random rndm = new Random();
 	
+	//Fills pin array
+		public static void resetPins(char[] pins) {
+			for(int i = 0; i < pins.length; i++) {
+				pins[i] = '●';
+			}
+		}
+	
 	public static int pin1(int origin, char[] pins, double rate) {
 		int count = 0;
 		if(rndm.nextInt((int) (2*rate)) == 1) {

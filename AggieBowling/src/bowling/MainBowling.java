@@ -6,16 +6,6 @@ import java.util.Scanner;
 
 public class MainBowling {
 	
-	static Random rndm = new Random();
-	
-	//Fills pin array
-	public static void resetPins(char[] pins) {
-		for(int i = 0; i < pins.length; i++) {
-			pins[i] = '●';
-		}
-	}
-	
-	
 	//Roll Ball function
 	public static int rollBall(char[] pins, int rollingline) {
 		int count = 0;

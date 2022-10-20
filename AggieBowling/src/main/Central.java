@@ -14,45 +14,47 @@ public class Central {
 				+ "");
 		
 		
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		Player poggers = new Player("Kyle");
 		
 		poggers.takeTurn(pingroup);
 		
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 		
-		bowling.MainBowling.resetPins(pingroup);
-		
-		poggers.takeTurn(pingroup);
-
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
+		
+		poggers.takeTurn(pingroup);
+
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 		
-		bowling.MainBowling.resetPins(pingroup);
+		bowling.PinEngine.resetPins(pingroup);
 		
 		poggers.takeTurn(pingroup);
 		
+		bowling.PinEngine.resetPins(pingroup);
 		
+		poggers.takeTurn(pingroup);
 		
 		System.out.println();
 		System.out.println(poggers.toString());
