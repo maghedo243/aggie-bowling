@@ -101,6 +101,8 @@ public class FrameEngine {
 	public static String boxTwoCalc(int a, int b) {
 		if(a == 0 && b == 0 || a != 10 && b == 0 && a != 0) {
 			return "-";
+		} else if(a == 10) {
+			return "X";
 		} else if (b == -1) {
 			return "_";
 		} else if(a + b < 10) {
@@ -108,7 +110,7 @@ public class FrameEngine {
 		} else if (a != 10 || a == 0 && b == 10) {
 			return "/";
 		} else {
-			return "X";
+			return "_";
 		}
 	}
 	

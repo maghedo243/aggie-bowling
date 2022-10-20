@@ -35,24 +35,37 @@ public class Player {
 			bowling.PinEngine.resetPins(pins);
 		}
 		
-		line = bowling.MainBowling.selectLine(pins);
-		pinsy = bowling.MainBowling.rollBall(pins,line);
-		this._pinsKnocked[determineFrame(2)] = pinsy;
+		if(this._pinsKnocked[determineFrame(1)] != 10 && this._currentframe != 9) {
+			line = bowling.MainBowling.selectLine(pins);
+			pinsy = bowling.MainBowling.rollBall(pins,line);
+			this._pinsKnocked[determineFrame(2)] = pinsy;
+			
+			bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
+			
+		}
 		
 		if(_currentframe == 9) {
-			if(_pinsKnocked[18] + _pinsKnocked[19] >= 10) {
+			line = bowling.MainBowling.selectLine(pins);
+			pinsy = bowling.MainBowling.rollBall(pins,line);
+			this._pinsKnocked[determineFrame(2)] = pinsy;
+			
+			bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
+			
+			if(this._pinsKnocked[18] + this._pinsKnocked[19] >= 10) {
+				
 				if(_pinsKnocked[18] != 10) {
 					bowling.PinEngine.resetPins(pins);
 				}
 				line = bowling.MainBowling.selectLine(pins);
 				pinsy = bowling.MainBowling.rollBall(pins,line);
 				this._pinsKnocked[determineFrame(3)] = pinsy;
+				
+				bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
 			}
 		}
+			
 		
 		this._currentframe++;
-		
-		bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
 		
 		return pinsy;
 	}

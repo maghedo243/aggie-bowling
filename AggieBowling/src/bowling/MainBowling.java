@@ -1,6 +1,5 @@
 package bowling;
 
-import java.util.Random;
 import java.util.Scanner;
 
 
@@ -8,6 +7,7 @@ public class MainBowling {
 	
 	//Roll Ball function
 	public static int rollBall(char[] pins, int rollingline) {
+		
 		int count = 0;
 		//Roll Calculations
 		if(rollingline == 1) {
