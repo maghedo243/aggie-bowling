@@ -1,10 +1,12 @@
 package main;
 
+import java.util.Scanner;
+
 public class Player {
 	private String _name;
 	private int _totalscore = 0;
 	private int _currentframe = 0;
-	private int[] _pinsKnocked = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+	private int[] _pinsKnocked = {9,1,10,-1,1,9,5,5,7,2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 	private int[] _frameScores = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 	
 	public Player() {
@@ -23,6 +25,13 @@ public class Player {
 	}
 	
 	public int takeTurn(char[] pins) {
+		
+		fScoreCalc();
+		bowling.FrameEngine.printFrames(this._pinsKnocked,this._frameScores);
+		for(int x:_frameScores) {
+			System.out.println(x);
+		}
+		
 		int line = 0;
 		int pinsy = 0;
 		line = bowling.MainBowling.selectLine(pins);
@@ -68,6 +77,135 @@ public class Player {
 		this._currentframe++;
 		
 		return pinsy;
+	}
+	
+	private void fScoreCalc() {
+		Scanner snr = new Scanner(System.in);
+		int scorenum = -1;
+		
+		//First Frame
+		//Strike Calc
+		if(this._pinsKnocked[0] + this._pinsKnocked[1] == 9 && this._pinsKnocked[1] == -1) {
+			if(this._pinsKnocked[3] != -1) {
+				this._frameScores[0] = this._pinsKnocked[2] + this._pinsKnocked[3] + 10;
+			} else if (this._pinsKnocked[2] == -1) {
+				this._frameScores[0] = -1;
+			} else if (this._pinsKnocked[4] == -1) {
+				this._frameScores[0] = -1;
+			} else {
+				this._frameScores[0] = this._pinsKnocked[2] + this._pinsKnocked[4] + 10;
+			}
+		} //Spare Calc
+		else if(this._pinsKnocked[0] + this._pinsKnocked[1] == 10) {
+			if(this._pinsKnocked[2] != -1) {
+				this._frameScores[0] = this._pinsKnocked[2] + 10;
+			} else {
+				this._frameScores[0] = -1;
+			}
+		} //Open Frame Calc
+		else if(this._pinsKnocked[0] != -1 && this._pinsKnocked[1] != -1){
+			this._frameScores[0] = this._pinsKnocked[0] + this._pinsKnocked[1];
+		}
+		
+		//Second Frame
+		//Strike Calc
+		if(this._pinsKnocked[2] + this._pinsKnocked[3] == 9 && this._pinsKnocked[3] == -1) {
+			if(this._pinsKnocked[5] != -1) {
+				this._frameScores[1] = this._pinsKnocked[4] + this._pinsKnocked[5] + this._frameScores[0] + 10;
+			} else if (this._pinsKnocked[4] == -1) {
+				this._frameScores[1] = -1;
+			} else if (this._pinsKnocked[6] == -1) {
+				this._frameScores[1] = -1;
+			} else {
+				this._frameScores[1] = this._pinsKnocked[4] + this._pinsKnocked[6] + this._frameScores[0] + 10;
+			}
+		} //Spare Calc
+		else if(this._pinsKnocked[2] + this._pinsKnocked[3] == 10) {
+			if(this._pinsKnocked[4] != -1) {
+				this._frameScores[1] = this._pinsKnocked[4] + this._frameScores[0] + 10;
+			} else {
+				this._frameScores[1] = -1;
+			}
+		} //Open Frame Calc
+		else if(this._pinsKnocked[2] != -1 && this._pinsKnocked[3] != -1){
+			this._frameScores[1] = this._pinsKnocked[2] + this._pinsKnocked[3] + this._frameScores[0];
+		}
+		
+		
+		//Third Frame
+		//Strike Calc
+		if(this._pinsKnocked[4] + this._pinsKnocked[5] == 9 && this._pinsKnocked[5] == -1) {
+			if(this._pinsKnocked[7] != -1) {
+				this._frameScores[2] = this._pinsKnocked[6] + this._pinsKnocked[7] + this._frameScores[1] + 10;
+			} else if (this._pinsKnocked[6] == -1) {
+				this._frameScores[2] = -1;
+			} else if (this._pinsKnocked[8] == -1) {
+				this._frameScores[2] = -1;
+			} else {
+				this._frameScores[2] = this._pinsKnocked[6] + this._pinsKnocked[8] + this._frameScores[1] + 10;
+			}
+		} //Spare Calc
+		else if(this._pinsKnocked[4] + this._pinsKnocked[5] == 10) {
+			if(this._pinsKnocked[6] != -1) {
+				this._frameScores[2] = this._pinsKnocked[6] + this._frameScores[1] + 10;
+			} else {
+				this._frameScores[2] = -1;
+			}
+		} //Open Frame Calc
+		else if(this._pinsKnocked[4] != -1 && this._pinsKnocked[5] != -1){
+			this._frameScores[2] = this._pinsKnocked[4] + this._pinsKnocked[5] + this._frameScores[1];
+		}
+		
+		
+		//Fourth Frame
+		//Strike Calc
+		if(this._pinsKnocked[6] + this._pinsKnocked[7] == 9 && this._pinsKnocked[7] == -1) {
+			if(this._pinsKnocked[9] != -1) {
+				this._frameScores[3] = this._pinsKnocked[8] + this._pinsKnocked[9] + this._frameScores[2] + 10;
+			} else if (this._pinsKnocked[8] == -1) {
+				this._frameScores[3] = -1;
+			} else if (this._pinsKnocked[10] == -1) {
+				this._frameScores[3] = -1;
+			} else {
+				this._frameScores[3] = this._pinsKnocked[8] + this._pinsKnocked[10] + this._frameScores[2] + 10;
+			}
+		} //Spare Calc
+		else if(this._pinsKnocked[6] + this._pinsKnocked[7] == 10) {
+			if(this._pinsKnocked[6] != -1) {
+				this._frameScores[3] = this._pinsKnocked[8] + this._frameScores[2] + 10;
+			} else {
+				this._frameScores[3] = -1;
+			}
+		} //Open Frame Calc
+		else if(this._pinsKnocked[6] != -1 && this._pinsKnocked[7] != -1){
+			this._frameScores[3] = this._pinsKnocked[6] + this._pinsKnocked[7] + this._frameScores[2];
+		}
+		
+		
+		//Fifth Frame
+		//Strike Calc
+		if(this._pinsKnocked[8] + this._pinsKnocked[9] == 9 && this._pinsKnocked[9] == -1) {
+			if(this._pinsKnocked[11] != -1) {
+				this._frameScores[4] = this._pinsKnocked[10] + this._pinsKnocked[11] + this._frameScores[3] + 10;
+			} else if (this._pinsKnocked[10] == -1) {
+				this._frameScores[4] = -1;
+			} else if (this._pinsKnocked[12] == -1) {
+				this._frameScores[4] = -1;
+			} else {
+				this._frameScores[4] = this._pinsKnocked[10] + this._pinsKnocked[12] + this._frameScores[3] + 10;
+			}
+		} //Spare Calc
+		else if(this._pinsKnocked[8] + this._pinsKnocked[9] == 10) {
+			if(this._pinsKnocked[8] != -1) {
+				this._frameScores[4] = this._pinsKnocked[10] + this._frameScores[3] + 10;
+			} else {
+				this._frameScores[4] = -1;
+			}
+		} //Open Frame Calc
+		else if(this._pinsKnocked[8] != -1 && this._pinsKnocked[9] != -1){
+			this._frameScores[4] = this._pinsKnocked[8] + this._pinsKnocked[9] + this._frameScores[3];
+		}
+	
 	}
 	
 	private int determineFrame(int box) {
