@@ -83,7 +83,7 @@ public class FrameEngine {
 	}
 	
 	//Calculates 1st framebox
-	public static String boxOneCalc(int a, int b) {
+	private static String boxOneCalc(int a, int b) {
 		if(a == 0) {
 			return "-";
 		} else if (a == 10 ||  a == -1){
@@ -98,7 +98,7 @@ public class FrameEngine {
 	}
 	
 	//Calculates 2nd framebox
-	public static String boxTwoCalc(int a, int b) {
+	private static String boxTwoCalc(int a, int b) {
 		if(a == 0 && b == 0 || a != 10 && b == 0 && a != 0) {
 			return "-";
 		} else if(a == 10) {
@@ -115,7 +115,7 @@ public class FrameEngine {
 	}
 	
 	//Calculates 1st final framebox
-	public static String lastBoxOneCalc(int a, int b, int c) {
+	private static String lastBoxOneCalc(int a, int b, int c) {
 		if(a == 10) {
 			return "X";
 		} else if (a == -1) {
@@ -128,7 +128,7 @@ public class FrameEngine {
 	}
 	
 	//Calculates 2nd final framebox
-	public static String lastBoxTwoCalc(int a, int b, int c) {
+	private static String lastBoxTwoCalc(int a, int b, int c) {
 		if(b == -1) {
 			return "_";
 		} else if(b == 10 && a != 0) {
@@ -145,7 +145,7 @@ public class FrameEngine {
 	}
 	
 	//Calculates 3rd final framebox
-	public static String lastBoxThreeCalc(int a, int b, int c) {
+	private static String lastBoxThreeCalc(int a, int b, int c) {
 		if(c == -1) {
 			return "_";
 		} else if(c == 10 && b != 0) {

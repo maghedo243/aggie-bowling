@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class MainBowling {
 	
+	public static int bowl(char[] pins) {
+		int line = 0;
+		line = bowling.MainBowling.selectLine(pins);
+		return bowling.MainBowling.rollBall(pins,line);
+	}
+	
 	//Roll Ball function
 	public static int rollBall(char[] pins, int rollingline) {
 		

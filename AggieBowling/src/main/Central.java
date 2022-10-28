@@ -3,7 +3,7 @@ package main;
 public class Central {
 
 	public static void main(String[] args) {
-		char[] pingroup = {'●','·','●','●','·','·','●','●','·','●'};
+		
 		System.out.println("\n"
 				+ " █████╗  ██████╗  ██████╗ ██╗███████╗    ██████╗  ██████╗ ██╗    ██╗██╗     ██╗███╗   ██╗ ██████╗ \n"
 				+ "██╔══██╗██╔════╝ ██╔════╝ ██║██╔════╝    ██╔══██╗██╔═══██╗██║    ██║██║     ██║████╗  ██║██╔════╝ \n"
@@ -14,8 +14,10 @@ public class Central {
 				+ "");
 		
 		
-		bowling.PinEngine.resetPins(pingroup);
+		System.out.println("Welcome! Please select a menu option.");
+		Game.gameSetup();
 		
+		/*
 		Player poggers = new Player("Kyle");
 		
 		poggers.takeTurn(pingroup);
@@ -56,8 +58,13 @@ public class Central {
 		
 		poggers.takeTurn(pingroup);
 		
+		bowling.FrameEngine.printFrames(poggers.getPinsKnocked(), poggers.get_frameScores());
+		
+		
 		System.out.println();
 		System.out.println(poggers.toString());
+		
+		*/
 	}
 
 }
