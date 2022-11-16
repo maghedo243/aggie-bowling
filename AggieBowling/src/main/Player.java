@@ -16,6 +16,12 @@ public class Player {
 		this._name = name;
 	}
 	
+	public Player(String name,int[] pinsKnocked, int currentFrame) {
+		this._name = name;
+		this._pinsKnocked = pinsKnocked;
+		this._currentFrame = currentFrame;
+	}
+	
 	
 	@Override
 	public String toString() {
@@ -151,6 +157,9 @@ public class Player {
 		bowling.FrameEngine.printFrames(this._pinsKnocked, this._frameScores);
 	}
 	
+	public void loadInit() {
+		fScoreCalc();
+	}
 	
 	//Getters and Setters
 	public String getName() {
