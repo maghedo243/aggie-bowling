@@ -104,7 +104,6 @@ public class Game {
 	public static void gameLoad() throws IOException{
 		Path savepath = Paths.get("src/saves");
 		String temp;
-		Object[] tempList;
 		Scanner inin = new Scanner(System.in);
 		FileInputStream fileStream;
 		Scanner inFile = null; 
