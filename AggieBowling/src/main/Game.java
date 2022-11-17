@@ -102,7 +102,7 @@ public class Game {
 	}
 
 	public static void gameLoad() throws IOException{
-		Path savepath = Paths.get("src/saves");
+		Path savepath = Paths.get("src/saves/");
 		String temp;
 		Scanner inin = new Scanner(System.in);
 		FileInputStream fileStream;
